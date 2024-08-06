@@ -222,9 +222,11 @@ const Testimonial = () => {
             Find out why we’re better.
           </h2>
 
-          <button className="bg-green-700 text-white px-8 py-4 rounded-full text-lg font-semibold mb-4">
-            <Link href="/pages/about">See all our stories</Link>
-          </button>
+          <Link href="/pages/about">
+            <button className="bg-green-700 text-white px-8 py-4 rounded-full text-lg font-semibold mb-4">
+              See all our stories
+            </button>
+          </Link>
           <div className="mt-4 flex justify-center md:justify-start items-center">
             <Star className="h-6 w-6 text-green-600 fill-current mr-2" />
             <p className="text-gray-600">

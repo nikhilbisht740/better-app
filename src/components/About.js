@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 // const About = () => {
 //   return (
@@ -313,13 +314,6 @@ const timelineData = [
 const TimelineItem = ({ year, content, isLast, cta }) => (
   <div className="flex">
     <div className="flex flex-col items-center mr-4">
-      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-600 text-white font-bold text-sm">
-        {typeof year === "number" ? (
-          year.toString().slice(-2)
-        ) : (
-          <ChevronRight size={16} />
-        )}
-      </div>
       {!isLast && <div className="w-px h-full bg-gray-300 mt-2"></div>}
     </div>
     <div className="pb-8">
@@ -334,9 +328,11 @@ const TimelineItem = ({ year, content, isLast, cta }) => (
         <p className="text-gray-700">{content}</p>
       )}
       {cta && (
-        <button className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors">
-          {cta}
-        </button>
+        <Link href="/">
+          <button className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors">
+            {cta}
+          </button>
+        </Link>
       )}
     </div>
   </div>
