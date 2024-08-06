@@ -16,19 +16,27 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-bold text-xl text-green-600 mb-4">Resources</h3>
-            <div className="space-y-2 text-sm text-black-600">
-              <Link href="/pages/about">Home affordability calculator</Link>
-              <Link href="/pages/cal">Mortgage calculator</Link>
+            <ul className="space-y-2 text-sm text-black-600">
+              <Link href="/pages/about">
+                <li>Home affordability calculator</li>
+              </Link>
+              <Link href="/pages/cal">
+                <li>Mortgage calculator</li>
+              </Link>
               {/* Add other resource links */}
-            </div>
+            </ul>
           </div>
           <div>
             <h3 className="font-bold text-xl text-green-600 mb-4">Company</h3>
-            <div className="space-y-2 text-sm text-black-600">
-              <Link href="/pages/about">About Us</Link>
-              <li>Careers</li>
+            <ul className="space-y-4 text-sm text-black-600">
+              <Link href="/pages/about">
+                <li>About Us</li>
+              </Link>
+              <Link href="/">
+                <li>Careers</li>
+              </Link>
               {/* Add other company links */}
-            </div>
+            </ul>
           </div>
           <div>
             <h3 className="font-bold text-xl text-green-600 mb-4">
