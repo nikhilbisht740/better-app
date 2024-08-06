@@ -358,11 +358,122 @@ const CompanyTimeline = () => (
     ))}
   </div>
 );
+
+// import React from 'react';
+
+const TimelineItem1 = ({ year, content, number, cta }) => (
+  <article
+    className={`relative p-8 ${
+      number % 2 === 0
+        ? "border-l-2 rounded-l-2xl ml-8 pr-0"
+        : "border-r-2 rounded-r-2xl mr-8 pl-0"
+    } border-dashed border-green-500`}
+  >
+    <h4 className=" font-bold mb-2">{year}</h4>
+    <div>
+      {Array.isArray(content) ? (
+        content.map((item, index) => (
+          <p key={index} className="text-gray-700 mb-8  ">
+            {item}
+          </p>
+        ))
+      ) : (
+        <p className="text-green-700 text mb-12 ">{content}</p>
+      )}
+      {cta && (
+        <button className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors">
+          <Link href="/">{cta}</Link>
+        </button>
+      )}
+    </div>
+    <span
+      className={`absolute top-1/2 -translate-y-1/2 ${
+        number % 2 === 0 ? "left-0 -translate-x-1/2" : "right-0 translate-x-1/2"
+      } w-8 h-8 rounded-full bg-green-500 text-white font-bold flex items-center justify-center`}
+    >
+      {number}
+    </span>
+  </article>
+);
+
+const Timeline = () => {
+  const timelineData = [
+    {
+      year: 2014,
+      content:
+        "After Vishal Garg's first attempt to purchase his own dream home, he quickly realized that the homebuying process is unnecessarily broken. This inspired him to found a technology-first company led by engineers and data experts with the mission of digitizing and automating home finance to make it cheaper, easier, and faster for all.",
+    },
+    {
+      year: 2015,
+      content:
+        "Better Mortgage funds its first mortgage loan entirely online (without a single phone call!).",
+    },
+    {
+      year: 2016,
+      content:
+        "Better expands into the real estate market with Better Real Estate.",
+    },
+    {
+      year: 2017,
+      content:
+        "Better Mortgage partners with Ally Bank to build Ally powered by Better",
+    },
+    {
+      year: 2018,
+      content:
+        "Better acquires Trussle — The UK's most innovative online mortgage broker.",
+    },
+    {
+      year: 2019,
+      content:
+        "Better Mortgage launches its pilot partnership with American Express to deliver a seamless homebuying experience to AMEX customers.",
+    },
+    {
+      year: 2021,
+      content:
+        "Better acquires Trussle — The UK's most innovative online mortgage broker.",
+    },
+    {
+      year: 2023,
+      content:
+        "Better Mortgage launches One Day Mortgage*: The first offering to customers to go from application to full mortgage Commitment Letter within 24 hours vs. typical industry process of 30+ days.",
+    },
+
+    {
+      year: "Today",
+      content:
+        "You become part of the story by joining tens of thousands of happy Better Mortgage borrowers.",
+      cta: "Get started",
+    },
+  ];
+
+  return (
+    <section className="py-16">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold mb-4"> Company Timeline</h2>
+        <div className="w-16 h-1 bg-green-500 mx-auto"></div>
+      </div>
+      <div className="max-w-2xl mx-auto">
+        {timelineData.map((item, index) => (
+          <TimelineItem1
+            key={item.year}
+            year={item.year}
+            content={item.content}
+            number={index + 1}
+            cta={item.cta}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
 const AboutPage = () => {
   return (
     <div>
       <About />
-      <CompanyTimeline />
+      {/* <CompanyTimeline /> */}
+      <Timeline />
     </div>
   );
 };
