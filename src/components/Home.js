@@ -7,11 +7,65 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Header = () => (
-  <header className=" fixed top-0 left-0 right-0 z-50  text-[#36d07a] p-4 flex justify-between items-center">
-    <div className="flex items-center space-x-6">
-      <span className="font-bold text-[#36d07a] text-2xl mr-12">Better</span>
-      <nav className="hidden md:flex space-x-6">
+const DropdownMenu = ({ items }) => {
+  return (
+    <div className="absolute top-full left-0 bg-green shadow-md rounded-b-md">
+      {items.map((item, index) => (
+        <Link
+          key={index}
+          href={item.href}
+          className="block px-4 py-2 text-sm text-green-500 hover:bg-green-100"
+        >
+          {item.label}
+        </Link>
+      ))}
+    </div>
+  );
+};
+const NavItem = ({ label, href, dropdownItems }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <Link
+        href={href}
+        className="px-3 py-2 text-sm font-medium text-green-500 hover:text-gray-900"
+      >
+        {label}
+      </Link>
+      {dropdownItems && isOpen && <DropdownMenu items={dropdownItems} />}
+    </div>
+  );
+};
+const Header = () => {
+  const navItems = [
+    {
+      label: "Buy",
+      href: "/",
+      dropdownItems: [
+        { label: "Apply now", href: "/" },
+        { label: "Purchase rates", href: "/" },
+        { label: "Affordability calculator", href: "/pages/cal" },
+        { label: "Mortgage calculator", href: "/pages/cal" },
+        { label: "Rent vs buy calculator", href: "/" },
+        { label: "Find an agent", href: "/" },
+        { label: "VA loans", href: "/" },
+      ],
+    },
+    { label: "About", href: "/pages/about" },
+    { label: "Mortgage", href: "/pages/cal" },
+    { label: "Rates", href: "/" },
+    { label: "Better+", href: "/" },
+  ];
+  return (
+    <header className=" fixed top-0 left-0 right-0 z-50  text-[#36d07a] p-4 flex justify-between items-center">
+      <div className="flex items-center space-x-6">
+        <span className="font-bold text-[#36d07a] text-2xl mr-12">Better</span>
+        {/* <nav className="hidden md:flex space-x-6">
         <a href="#" className="hover:underline">
           Buy
         </a>
@@ -27,20 +81,26 @@ const Header = () => (
         <a href="#" className="hover:underline">
           Insights
         </a>
-      </nav>
-    </div>
-    <div className="flex items-center space-x-4">
-      <Phone className="h-5 w-5" />
-      <a href="#" className="hover:underline">
-        Sign in
-      </a>
-      <button className="bg-green-500 text-white px-4 py-2 rounded-full">
-        Get Started
-      </button>
-    </div>
-  </header>
-);
-
+      </nav> */}
+        <nav className="hidden md:ml-6 md:flex space-x-4">
+          {" "}
+          {navItems.map((item, index) => (
+            <NavItem key={index} {...item} />
+          ))}
+        </nav>
+      </div>
+      <div className="flex items-center space-x-4">
+        <Phone className="h-5 w-5" />
+        <a href="#" className="hover:underline">
+          Sign in
+        </a>
+        <button className="bg-green-500 text-white px-4 py-2 rounded-full">
+          Get Started
+        </button>
+      </div>
+    </header>
+  );
+};
 const Hero = () => (
   <section className="bg-[#002f20] text-[#36d07a] p-8 md:p-16 relative">
     <div className="max-w-5xl mx-auto ">

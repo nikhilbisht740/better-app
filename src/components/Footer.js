@@ -16,19 +16,19 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-bold text-xl text-green-600 mb-4">Resources</h3>
-            <ul className="space-y-2 text-sm">
-              <li>Home affordability calculator</li>
-              <li>Mortgage calculator</li>
+            <div className="space-y-2 text-sm">
+              <Link href="/pages/about">Home affordability calculator</Link>
+              <Link href="/pages/cal">Mortgage calculator</Link>
               {/* Add other resource links */}
-            </ul>
+            </div>
           </div>
           <div>
             <h3 className="font-bold text-xl text-green-600 mb-4">Company</h3>
-            <ul className="space-y-2 text-sm">
+            <div className="space-y-2 text-sm">
               <Link href="/pages/about">About Us</Link>
               <li>Careers</li>
               {/* Add other company links */}
-            </ul>
+            </div>
           </div>
           <div>
             <h3 className="font-bold text-xl text-green-600 mb-4">
