@@ -591,7 +591,7 @@ const Footer = () => (
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h3 className="font-bold text-xl text-green-600 mb-4">Better</h3>
-          <p className="text-sm">
+          <p className="text-sm text-black-600">
             Better is a family of companies serving all your homeownership
             needs.
           </p>
@@ -599,7 +599,7 @@ const Footer = () => (
         </div>
         <div>
           <h3 className="font-bold text-xl text-green-600 mb-4">Resources</h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm text-black-600">
             <li>Home affordability calculator</li>
             <li>Mortgage calculator</li>
             {/* Add other resource links */}
@@ -607,7 +607,7 @@ const Footer = () => (
         </div>
         <div>
           <h3 className="font-bold text-xl text-green-600 mb-4">Company</h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm text-black-600">
             <Link href="/pages/about">About Us</Link>
             <li>Careers</li>
             {/* Add other company links */}
@@ -615,7 +615,7 @@ const Footer = () => (
         </div>
         <div>
           <h3 className="font-bold text-xl text-green-600 mb-4">Contact Us</h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm text-black-600">
             <li>hello@Better.com</li>
             <li>415-523-8837</li>
             {/* Add other contact information */}
