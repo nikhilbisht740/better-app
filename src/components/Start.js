@@ -70,9 +70,9 @@ const StartPage = () => {
           <p className="font-semibold mb-4 text-center">
             After a few questions, you'll unlock:
           </p>
-          <ul className="space-y-2 ">
+          <ul className="space-y-2  ">
             <Link href="/pages/cal">
-              <li className="flex items-center">
+              <li className="flex items-center text-green-600 ">
                 <DollarSign className="w-4 h-4 ml-20  mr-8 text-green-600 text-center" />{" "}
                 Custom mortgage rates
               </li>
@@ -81,11 +81,11 @@ const StartPage = () => {
               <DollarSign className="w-6 h-6 ml-20  mr-8 text-green-600 text-center" />{" "}
               Custom mortgage rates
             </li> */}
-            <li className="flex items-center">
+            <li className="flex items-center text-green-600">
               <RefreshCw className="w-4 h-4 ml-20 mr-8 text-green-600 text-center" />{" "}
               Exclusive offers
             </li>
-            <li className="flex items-center ">
+            <li className="flex items-center text-green-600 ">
               <Home className="w-4 h-4 ml-20 mr-8 text-green-600 text-center" />{" "}
               A personalized dashboard
             </li>
